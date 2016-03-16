@@ -1,0 +1,24 @@
+{
+  "name": "nfilin/gcm",
+  "homepage": "https://github.com/nfilin/gcm",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stanislav Markovskyi",
+      "email": "samarkowski@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4",
+    "nfilin/mobile-notifications": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "Nfilin\\Libs": "src/"
+    }
+  },
+  "require-dev": {
+  }
+}
