@@ -1,10 +1,13 @@
 <?php
-
-namespace Nfilin\Libs\MobileNotifications\Response;
+namespace Nfilin\Libs\Gcm;
 
 use Nfilin\Libs\BaseObject;
 
-class GcmStatusRecord extends BaseObject
+/**
+ * Class ResponseStatusRecord
+ * @package Nfilin\Libs\Gcm
+ */
+class ResponseStatusRecord extends BaseObject
 {
     /**
      * @var int

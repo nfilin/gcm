@@ -1,15 +1,13 @@
 <?php
+namespace Nfilin\Libs\Gcm;
+
+use Nfilin\Libs\MobileNotifications\Authorization\AuthorizationInterface;
+
 /**
- * Created by PhpStorm.
- * User: stas
- * Date: 15.03.16
- * Time: 13:17
+ * Class Authorization
+ * @package Nfilin\Libs\Gcm
  */
-
-namespace Nfilin\Libs\MobileNotifications\Authorization;
-
-
-class Gcm implements AuthorizationInterface
+class Authorization implements AuthorizationInterface
 {
     /**
      * @var string

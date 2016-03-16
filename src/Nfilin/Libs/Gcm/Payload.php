@@ -1,12 +1,13 @@
 <?php
+namespace Nfilin\Libs\Gcm;
 
-namespace Nfilin\Libs\MobileNotifications\Payload;
+use Nfilin\Libs\MobileNotifications\Payload\Base as BasePayload;
 
 /**
- * Class Gcm
- * @package Nfilin\Libs\MobileNotifications\Payload
+ * Class Payload
+ * @package Nfilin\Libs\Gcm
  */
-class Gcm extends Base
+class Payload extends BasePayload
 {
     /**
      * @var string;
@@ -21,6 +22,9 @@ class Gcm extends Base
      */
     public $color;
 
+    /**
+     * @return array
+     */
     function jsonSerialize()
     {
         $ret = [];

@@ -1,32 +1,33 @@
 <?php
-
-namespace Nfilin\Libs\MobileNotifications\Message;
+namespace Nfilin\Libs\Gcm;
 
 use Nfilin\Libs\MobileNotifications\Device\DeviceListInterface;
-use Nfilin\Libs\MobileNotifications\Device\GcmList as dGcmList;
-use Nfilin\Libs\MobileNotifications\Payload\Gcm as pGcm;
+use Nfilin\Libs\MobileNotifications\Message\Base as BaseMessage;
 use Nfilin\Libs\MobileNotifications\Payload\PayloadInterface;
 
 /**
- * Class Gcm
- * @package Nfilin\Libs\MobileNotifications\Message
+ * Class Message
+ * @package Nfilin\Libs\Gcm
  */
-class Gcm extends Base
+class Message extends BaseMessage
 {
     /**
      * Gcm constructor.
-     * @param dGcmList|DeviceListInterface $receivers
+     * @param DeviceList|DeviceListInterface $receivers
      * @param PayloadInterface|null $payload
      * @throws \Exception
      */
     public function __construct(DeviceListInterface $receivers, PayloadInterface $payload = null)
     {
-        if (!$receivers instanceof dGcmList) {
+        if (!$receivers instanceof DeviceList) {
             throw new \Exception('Only GCM devices allowed for GCM message');
         }
         parent::__construct($receivers, $payload);
     }
 
+    /**
+     * @return array
+     */
     function jsonSerialize()
     {
         $receivers = $this->receivers;
@@ -45,7 +46,7 @@ class Gcm extends Base
         $ret['restricted_package_name'] = $this->restricted_package_name;
         $ret['dry_run'] = $this->dry_run;
         $ret['data'] = $this->payload->getCustomData();
-        $ret['notification'] = pGcm::wrap($this->payload);
+        $ret['notification'] = Payload::wrap($this->payload);
         return $ret;
     }
 

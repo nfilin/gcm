@@ -1,12 +1,13 @@
 <?php
+namespace Nfilin\Libs\Gcm;
 
-namespace Nfilin\Libs\MobileNotifications\Response;
+use Nfilin\Libs\MobileNotifications\Response\Curl;
 
 /**
- * Class Gcm
- * @package Nfilin\Libs\MobileNotifications\Response
+ * Class Response
+ * @package Nfilin\Libs\Gcm
  */
-class Gcm extends Curl
+class Response extends Curl
 {
     /**
      * @var int
@@ -25,7 +26,7 @@ class Gcm extends Curl
      */
     public $canonical_ids;
     /**
-     * @var GcmStatusRecord[]
+     * @var ResponseStatusRecord[]
      */
     public $result = [];
 }
