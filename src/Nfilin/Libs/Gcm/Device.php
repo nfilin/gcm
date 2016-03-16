@@ -2,7 +2,7 @@
 
 namespace Nfilin\Libs\Gcm;
 
-use Nfilin\Libs\MobileNotifications\Device\Device as BaseDevice;
+use Nfilin\Libs\MobileNotifications\Device\Base as BaseDevice;
 use Nfilin\Libs\MobileNotifications\Device\DeviceInterface;
 
 /**
